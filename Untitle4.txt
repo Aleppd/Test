@@ -31,19 +31,20 @@ public class InvoiceActivity extends AppCompatActivity {
         Double tax = finalPrice * 0.06;
         finalPrice = finalPrice + tax;
 
-        StringBuilder sb = new StringBuilder();
-        sb.append("Name : ").append(name).append("\n")
-                .append("State : ").append(state).append("\n")
-                .append("Age : ").append(age).append("\n")
-                .append("Plan : ").append(packages).append("\n")
-                .append("Duration : ").append(duration + " Months").append("\n")
-                .append("Price : RM").append(String.format("%.2f",PricePayment)).append("\n")
-                .append("Discount : ").append(discount).append("\n")
-                .append("Service Tax (6%) : RM").append(String.format("%.2f",tax)).append("\n")
-                .append("Total : RM").append(String.format("%.2f",finalPrice)).append("\n");
+         StringBuilder sb = new StringBuilder();
+            sb.append("Name : ").append(name).append("\n")
+                    .append("State : ").append(state).append("\n")
+                    .append("Age : ").append(age).append("\n")
+                    .append("Plan : ").append(packages).append("\n")
+                    .append("Duration : ").append(duration).append(" Months\n")
+                    .append("Price : RM").append(String.format("%.2f", PricePayment)).append("\n")
+                    .append("Discount : ").append(discount).append("\n")
+                    .append("Service Tax (6%) : RM").append(String.format("%.2f", tax)).append("\n")
+                    .append("Total : RM").append(String.format("%.2f", finalPrice)).append("\n");
 
-        tvOutput.setText(sb);
-
-
-    }
+            tvOutput.setText(sb.toString());
+        } else {
+            tvOutput.setText("No data available");
+        }
+    }
 }
